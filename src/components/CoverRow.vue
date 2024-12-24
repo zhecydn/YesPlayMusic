@@ -50,7 +50,7 @@ export default {
   props: {
     items: { type: Array, required: true },
     type: { type: String, required: true },
-    subText: { type: String, default: 'null' },
+    subText: { type: String, default: 'none' },
     subTextFontSize: { type: String, default: '16px' },
     showPlayCount: { type: Boolean, default: false },
     columnNumber: { type: Number, default: 5 },
@@ -75,9 +75,9 @@ export default {
         return new Date(item.publishTime).getFullYear();
       if (this.subText === 'artist') {
         if (item.artist !== undefined)
-          return `<a href="/#/artist/${item.artist.id}">${item.artist.name}</a>`;
+          return `<a href="/artist/${item.artist.id}">${item.artist.name}</a>`;
         if (item.artists !== undefined)
-          return `<a href="/#/artist/${item.artists[0].id}">${item.artists[0].name}</a>`;
+          return `<a href="/artist/${item.artists[0].id}">${item.artists[0].name}</a>`;
       }
       if (this.subText === 'albumType+releaseYear') {
         let albumType = item.type;
@@ -96,7 +96,7 @@ export default {
       return this.type === 'playlist' && item.privacy === 10;
     },
     isExplicit(item) {
-      return this.type === 'album' && item.mark === 1056768;
+      return this.type === 'album' && (item.mark & 1048576) === 1048576;
     },
     getTitleLink(item) {
       return `/${this.type}/${item.id}`;

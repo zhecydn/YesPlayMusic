@@ -125,6 +125,16 @@ yarn run build
 
 7. 将 `/dist` 目录下的文件上传到你的 Web 服务器
 
+## ⚙️ 宝塔面板 docker应用商店 部署
+
+1. 安装宝塔面板，前往[宝塔面板官网](https://www.bt.cn/new/download.html) ，选择正式版的脚本下载安装。
+
+2. 安装后登录宝塔面板，在左侧导航栏中点击 Docker，首次进入会提示安装Docker服务，点击立即安装，按提示完成安装
+
+3. 安装完成后在应用商店中找到YesPlayMusic，点击安装，配置域名、端口等基本信息即可完成安装。
+
+4. 安装后在浏览器输入上一步骤设置的域名即可访问。
+
 ## ⚙️ Docker 部署
 
 1. 构建 Docker Image
@@ -162,7 +172,7 @@ bash <(curl -s -L https://raw.githubusercontent.com/qier222/YesPlayMusic/main/in
 4. 由于 replit 个人版限制内存为 1G（教育版为 3G），构建过程中可能会失败，请再次运行上述命令或运行以下命令：
 
 ```sh
-cd /home/runner/${REPL_SLUG}/music && yarn installl && yarn run build
+cd /home/runner/${REPL_SLUG}/music && yarn install && yarn run build
 ```
 
 ## 👷‍♂️ 打包客户端

@@ -114,6 +114,8 @@ export default {
     pause: '暂停',
     mute: '静音',
     nextUp: '播放列表',
+    translationLyric: '歌词(译)',
+    PronunciationLyric: '歌词(音)',
   },
   modal: {
     close: '关闭',
@@ -192,6 +194,12 @@ export default {
       exit: '退出',
       minimizeToTray: '最小化到托盘',
     },
+    enableOsdlyricsSupport: {
+      title: '桌面歌词支持',
+      desc1:
+        '仅 Linux 下生效。启用后会将歌词文件下载到本地，并在开启播放器时尝试拉起 OSDLyrics。',
+      desc2: '请在开启之前确保您已经正确安装了 OSDLyrics。',
+    },
     unm: {
       enable: '启用',
       audioSource: {
@@ -235,6 +243,8 @@ export default {
     minePlaylists: '创建的歌单',
     likedPlaylists: '收藏的歌单',
     cardiacMode: '心动模式',
+    copyLyric: '复制歌词',
+    copyLyricWithTranslation: '复制歌词（含翻译）',
   },
   toast: {
     savedToPlaylist: '已添加到歌单',
